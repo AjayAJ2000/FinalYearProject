@@ -1,0 +1,1 @@
+web: gunicorn FP.wsgi --log-file -
