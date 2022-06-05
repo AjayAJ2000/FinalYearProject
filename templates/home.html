@@ -1,0 +1,183 @@
+{% extends  'base.html' %}
+{% block content%}
+<br>
+<div class="bg-danger mb-3 card mb-3 ">
+
+  <div class="card-body text-white text-center">
+    <h5 class="card-title">NEURO FUZZY BASED IOT ASSISTED POWER MONITORING SYSTEM FOR SMART GRID</h5>
+    <p class="card-text">B.tech EEE (2018-2022)</p>
+    <p class="card-text">Final Year Project</p>
+  </div>
+</div>
+<center>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <div class="text-center "><strong>NEURO FUZZY BASED IOT ASSISTED POWER MONITORING SYSTEM FOR SMART GRID</strong></div>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="text-center">
+        <ul class="list-group">
+          <li class="list-group-item bg-danger text-white"><strong>Project Guide: Professor R.Mathi</strong></li>
+          <li class="list-group-item list-group-item-danger">--------------Team Members------------</li>
+            <li class="list-group-item">Ajay J. &emsp; &ensp; &ensp; &ensp; &emsp; 222005004</li>
+            <li class="list-group-item">Gokul Vijay S.S. &emsp;  222005015</li>
+            <li class="list-group-item">Ganesh K. &emsp; &emsp; &ensp; 222005013</li>
+          </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Abstract
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        This project describes solar and wind system with battery  system interfaced with grid system. a hybrid system comprising of photovoltaic (PV) and battery with fuzzy logic control (FLC) to meet the demands of isolated off grid DC loads. The procedure for the parallel connection of multiple energy sources provides a stable power supply and optimal charging of the accumulative element. Renewable energy sources are connected in parallel using two serial converters and controlled by the controller based on the fuzzy logic. IOT based monitoring system implemented here for monitoring system
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+        Block Diagram
+      </button>
+    </h2>
+    <center>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <img src="https://ieeexplore.ieee.org/ielx7/6287639/9312710/9661299/graphical_abstract/access-gagraphic-3137812.jpg" height="75%" width="80%" />
+      </div>
+    </div></center>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+        Base Paper
+      </button>
+    </h2>
+    <center>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <iframe src="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9661299" title="description" width="70%" height = "500px"></iframe>
+      </div>
+    </div></center>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+        Demo Video
+      </button>
+    </h2>
+    <center>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j3c6B8irACg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+      </div>
+    </div></center>
+  </div>
+</div><br>
+  <br>
+
+{% if indi == 11 %}
+  <div class="card border-primary mb-3">
+    
+    <div class="card-body">
+      <h5 class="card-title">{{sys}}</h5>
+      <p class="card-text">Solar Voltage is {{solar}}<br> Wind Voltage is {{wind}}<br>Temperature of the system is {{temp}} and {{status}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+</div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://previews.123rf.com/images/accogliente/accogliente2006/accogliente200600024/149776045-vector-illustration-renewable-energy-solar-panels-station-concept-green-electricity-plant-eco-ecolog.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Solar</h5>
+              <p class="card-text">Solar Voltage Recieved is {{solar}}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 30seconds ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            {% if status == 'Low'%}
+            <img src="https://www.pngkey.com/png/detail/415-4157378_heat-o-meter-speedometer-infographic.png" class="card-img-top" alt="...">
+            {%else%}
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/002/694/862/small_2x/gauge-temperature-icon-free-vector.jpg" class="card-img-top" alt="...">
+            {%endif%}
+            <div class="card-body">
+              <h5 class="card-title">Temperature</h5>
+              <p class="card-text">Current System Temperature Status is {{status}} </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 30seconds ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://cdn.dribbble.com/users/315406/screenshots/6178797/media/5161b29cda162be3cb3fa53df99db200.png?compress=1&resize=400x300&vertical=top" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Wind Energy</h5>
+              <p class="card-text">Wind Voltage recieved is {{wind}} </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 30seconds ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+{% else %}
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="https://3.bp.blogspot.com/-WM-es1A-K6A/VoaEcBD-J8I/AAAAAAAABtQ/iW3CDr11gp4/s1600/power%2Bgrid.jpg" height="50%" width = "50%" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Grid Connected</h5>
+        <p class="card-text">The System is Connected to Grid for now.</p>
+        <p class="card-text"><small class="text-muted">Last updated 30 seconds ago</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      {% if status == 'Low'%}
+            <img src="https://www.pngkey.com/png/detail/415-4157378_heat-o-meter-speedometer-infographic.png" class="card-img-top" alt="...">
+            {%else%}
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/002/694/862/small_2x/gauge-temperature-icon-free-vector.jpg" class="card-img-top" alt="...">
+            {%endif%}
+            <div class="card-body">
+              <h5 class="card-title">Temperature</h5>
+              <p class="card-text">Current System Temperature Status is {{status}} </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 30seconds ago</small>
+            </div>
+    </div>
+  </div>
+  
+</div>
+</center>
+{% endif %}
+
+      <script>
+        window.setInterval('refresh()', 20000);
+        function refresh() {
+            window .location.reload();
+        }
+    </script>
+{%endblock%}
