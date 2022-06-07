@@ -1,9 +1,11 @@
-
+from dotenv import load_dotenv
+import os
 from django.dispatch import receiver
 import telepot
+load_dotenv()
 def send(message):
-    token = "5519372105:AAGPYexmU0KyZZzSIatdz374p5sMtWseJAo"
-    receiver_id = 914139390
+    token = os.getenv("TS_TOKEN")
+    receiver_id = os.getenv("RECIEVER_ID")
     bot = telepot.Bot(token)
     bot.sendMessage(receiver_id,message)
 

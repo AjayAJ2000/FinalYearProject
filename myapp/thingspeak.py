@@ -1,12 +1,16 @@
 import json
 import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 def getdata():
-    READ_API_KEY='N9R36SGK1B7BX8XT'
-    CHANNEL_ID= '1749653'
-
+    READ_API_KEY=os.getenv("TS_KEY")
+    CHANNEL_ID= os.getenv("TS_ID")
+    print(CHANNEL_ID)
     response = requests.get("http://api.thingspeak.com/channels/%s/feeds/last.json?api_key=%s"% (CHANNEL_ID,READ_API_KEY))
     todos = json.loads(response.text)
+    print(todos)
     output = todos['field1']
     output = output.split("_")
     print(output)
